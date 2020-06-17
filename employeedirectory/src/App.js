@@ -20,7 +20,7 @@ render() {
   return (
     <Wrapper>
       <Header>Employee Header</Header>
-      <SearchBox></SearchBox>
+      <SearchBox/>
         
     </Wrapper>
   );
