@@ -3,8 +3,8 @@ import "./style.css";
 
 function SearchResults(props) {
   return (props.employees.map(employee => (
-        <div className="row">
-        <div className="col img-fluid" key={employee.id}>
+        <div className="row" key={employee.id}>
+        <div className="col img-fluid" >
           <img alt={employee.name} src={employee.image} />
         </div>
         <div className="col">{employee.name}</div>

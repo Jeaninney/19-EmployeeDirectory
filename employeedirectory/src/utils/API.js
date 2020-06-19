@@ -1,4 +1,5 @@
 import axios from "axios";
+import employees from "./employees.json";
 
 // Export an object containing methods we'll use for accessing the Dog.Ceo API
 
@@ -11,5 +12,8 @@ export default {
   },
   getBaseBreedsList: function() {
     return axios.get("https://dog.ceo/api/breeds/list");
+  },
+  getEmployeesByName: function(){
+    return employees.name;
   }
 };
