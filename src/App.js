@@ -14,6 +14,8 @@ class App extends React.Component {
   //Setting this.state.employee to the employee json array
   state = {
     employees: [],
+    nameSort: "ASC",
+    phoneSort: "ASC",
     userInput: "",
     results: []
   };
@@ -21,13 +23,7 @@ class App extends React.Component {
 
 
   searchName = (value) => {
-    // // Filter this.state.friends for friends with an id not equal to the id being removed
-    // const friends = this.state.employees.filter(friend => friend.id !== id);
-    // // // Set this.state.friends equal to the new friends array
-    // this.setState({ employees });
     this.findName(this.state.employees, 0, value);
-    // console.log(this.state.userInput);
-    // console.log(this.state.employees.indexOf(this.state.userInput) !==-1);
   };
 
   componentDidMount() {
@@ -81,17 +77,22 @@ class App extends React.Component {
 
   sortByName = () => {
     let sortedEmployees = this.state.employees;
-    sortedEmployees.sort()
-
-
-    var sortOrder = "ASC";
-    var items = this.state.employees
-
+    sortedEmployees.sort();
+    
+    var sortOrder = this.state.nameSort;
+    var items = this.state.employees;
+    // sort by name
     items.sort(sortOrder === 'ASC' ? this.ascCompare : this.descCompare);
     console.log(items);
-
+    if (sortOrder === 'ASC') {
+      sortOrder = 'DESC';
+    } else {
+      sortOrder = 'ASC';
+    }
+    
     this.setState({
-      employees: sortedEmployees
+      employees: sortedEmployees,
+      nameSort: sortOrder
     })
   }
 

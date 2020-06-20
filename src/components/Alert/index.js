@@ -10,6 +10,7 @@ class App extends React.Component {
   //Setting this.state.employee to the employee json array
   state = {
     employees: [],
+    nameSort: "DESC",
     userInput: "",
     results: []
   };
@@ -63,15 +64,21 @@ class App extends React.Component {
     let sortedEmployees = this.state.employees;
     sortedEmployees.sort();
     
-    var sortOrder = "DESC";
+    var sortOrder = this.state.nameSort;
     var items = this.state.employees;
 ​
     // sort by name
     items.sort(sortOrder === 'ASC' ? this.ascCompareFnc : this.descCompareFnc);
     console.log(items);
+    if (sortOrder === 'ASC') {
+      sortOrder = 'DESC';
+    } else {
+      sortOrder = 'ASC';
+    }
     
     this.setState({
-      employees: sortedEmployees
+      employees: sortedEmployees,
+      nameSort: sortOrder
     })
   }
 ​
