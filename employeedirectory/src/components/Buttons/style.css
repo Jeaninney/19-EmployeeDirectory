@@ -1,8 +1,7 @@
 .card-btn {
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
-  position: absolute;
+
+  width: 100%;
+  position: relative;
   border: none;
   bottom: 10%;
   color: #FFF;
