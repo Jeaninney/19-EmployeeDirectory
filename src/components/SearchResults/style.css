@@ -2,9 +2,24 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  
 }
 
 img  {
   height: 200px;
   width: 200px;
+  
+}
+
+.emp {
+  border: 3px solid #330033;
+  margin:2px;
+}
+
+.entry {
+  padding-top: 50px;
+}
+
+.rowentry {
+  background: #ffe6e6
 }

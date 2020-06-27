@@ -4,9 +4,8 @@ import "./style.css";
 function Buttons (props) {
   return (
   <div>
-    <div className="row">
+    <div className="row buttonrow">
         <div className="col"></div>
-        {console.log(props)}
         <div className="col"><button className="card-btn" onClick={props.sort}>Sort by Name</button></div>
         <div className="col"><button className="card-btn" onClick={props.sort}>Sort by Phone</button></div>
         <div className="col"><button className="card-btn" onClick={props.sort}>Sort by Email</button></div>

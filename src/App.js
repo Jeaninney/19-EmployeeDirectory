@@ -2,14 +2,9 @@ import React from "react";
 import Wrapper from "./components/Wrapper";
 import Header from "./components/Header";
 import Buttons from "./components/Buttons";
-// import SearchBox from "./components/SearchBox";
 import SearchResults from "./components/SearchResults";
 import employees from "./employees.json";
 import Container from "./components/Container";
-
-// import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Container, Row, Col } from "react-bootstrap"; 
 
 class App extends React.Component {
   //Setting this.state.employee to the employee json array
@@ -28,10 +23,8 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    // API.getBaseBreedsList()
     this.setState({ employees: employees });
     this.setState({ results: employees });
-    // .catch(err => console.log(err));
   }
 
   findName(names, index, letter) {
@@ -108,17 +101,16 @@ class App extends React.Component {
     this.searchName(value);
   };
 
-  // Map over this.state.employees and render a Employee component for each Employee object
   render() {
     return (
       <Wrapper>
         <Header>Employee Header</Header>
         <Container>
+         
           <form className="search">
             <div className="form-group">
               <input
                 value={this.state.userInput}
-                // onChange={props.handleInputChange}
                 name="userInput"
                 type="text"
                 className="form-control"
