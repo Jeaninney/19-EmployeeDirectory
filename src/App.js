@@ -1,6 +1,7 @@
 import React from "react";
 import Wrapper from "./components/Wrapper";
 import Header from "./components/Header";
+import Buttons from "./components/Buttons";
 // import SearchBox from "./components/SearchBox";
 import SearchResults from "./components/SearchResults";
 import employees from "./employees.json";
@@ -96,15 +97,7 @@ class App extends React.Component {
     })
   }
 
-  // filterEmployee = id => {
-  //   // Filter this.state.friends for friends with an id not equal to the id being removed
-  //   const employees = this.state.employees.filter(friend => friend.id !== id);
-  //   // Set this.state.friends equal to the new friends array
-  //   this.setState({ employees });
-  // };
-
   handleInputChange = event => {
-    // Getting the value and name of the input which triggered the change
     const value = event.target.value;
     const name = event.target.name;
 
@@ -129,7 +122,7 @@ class App extends React.Component {
                 name="userInput"
                 type="text"
                 className="form-control"
-                placeholder="Search"
+                placeholder="Search by name"
                 id="employee"
                 onChange={this.handleInputChange}
                 style={{ width: "30%", margin: "0 auto", marginLeft: "auto", marginRight: "auto" }}
@@ -137,15 +130,7 @@ class App extends React.Component {
 
             </div>
           </form>
-          <div>
-            <div className="row">
-              <div className="col"></div>
-              <div className="col"><button className="card-btn" onClick={this.sortByName}>Name</button></div>
-              <div className="col"><button className="card-btn" onClick={this.sortByName}>Phone</button></div>
-              <div className="col"><button className="card-btn" onClick={this.sortByName}>Email</button></div>
-              <div className="col"><button className="card-btn" onClick={this.sortByName}>DOB</button></div>
-            </div>
-          </div>
+          <Buttons sort={this.sortByName} />
           <SearchResults employees={this.state.results} />
         </Container>
       </Wrapper>
